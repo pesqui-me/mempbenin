@@ -1,31 +1,57 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-    </div>
+<x-auth-layout>
+    <x-slot:title>Vérification de l'email</x-slot>
 
-    @if (session('status') == 'verification-link-sent')
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-        </div>
-    @endif
-
-    <div class="mt-4 flex items-center justify-between">
-        <form method="POST" action="{{ route('verification.send') }}">
-            @csrf
-
-            <div>
-                <x-primary-button>
-                    {{ __('Resend Verification Email') }}
-                </x-primary-button>
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="auth-logo">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#1B58A2"/>
+                    <path d="M20 10L30 15V25L20 30L10 25V15L20 10Z" fill="white"/>
+                    <circle cx="20" cy="20" r="4" fill="#FFE11B"/>
+                </svg>
             </div>
-        </form>
+            <h1 class="auth-title">Vérification e-mail</h1>
+            <p class="auth-subtitle">Confirmez votre adresse e-mail</p>
+        </div>
 
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
+        <div class="auth-body">
+            <div class="alert alert-info" style="margin-bottom: 1.5rem;">
+                <i data-lucide="mail" width="20" height="20"></i>
+                <span>Un lien de vérification a été envoyé à votre adresse e-mail. Veuillez cliquer sur le lien pour activer votre compte.</span>
+            </div>
 
-            <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                {{ __('Log Out') }}
-            </button>
-        </form>
+            @if (session('status') == 'verification-link-sent')
+                <div class="alert alert-success">
+                    <i data-lucide="check-circle" width="20" height="20"></i>
+                    <span>Un nouveau lien de vérification a été envoyé !</span>
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('verification.send') }}">
+                @csrf
+                <div class="form-group">
+                    <button type="submit" class="btn-primary">
+                        Renvoyer l'e-mail de vérification
+                    </button>
+                </div>
+            </form>
+
+            <div class="divider">
+                <span>OU</span>
+            </div>
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <div class="text-center">
+                    <button type="submit" class="auth-link">
+                        Se déconnecter
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="auth-footer">
+            <p>&copy; {{ date('Y') }} MEMP Bénin. Tous droits réservés.</p>
+        </div>
     </div>
-</x-guest-layout>
+</x-auth-layout>
