@@ -1,56 +1,20 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// Guest Routes
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Admin Routes
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-    // Posts
-    Route::get('/posts', function () {
-        return 'Posts Index';
-    })->name('posts.index');
-
-    // Communiques
-    Route::get('/communiques', function () {
-        return 'Communiques Index';
-    })->name('communiques.index');
-
-    // Categories
-    Route::get('/categories', function () {
-        return 'Categories Index';
-    })->name('categories.index');
-
-    // Media
-    Route::get('/media', function () {
-        return 'Media Index';
-    })->name('media.index');
-
-    // Users
-    Route::get('/users', function () {
-        return 'Users Index';
-    })->name('users.index');
-
-    // Settings
-    Route::get('/settings', function () {
-        return 'Settings Index';
-    })->name('settings.index');
-
-    // Profile
-    Route::get('/profile', function () {
-        return 'Profile Edit';
-    })->name('profile.edit');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Temporary logout route for testing
-Route::post('/logout', function () {
-    auth()->logout();
-    return redirect('/');
-})->name('logout');
+require __DIR__.'/auth.php';
