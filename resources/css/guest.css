@@ -1,0 +1,27 @@
+/* ==========================================================================
+   MEMP BÉNIN - Guest CSS
+   Charte graphique Benin64
+   ========================================================================== */
+
+/* Import Bootstrap 5 */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Variables CSS - Charte Benin64 */
+:root {
+    --primary: #1B58A2;
+    --primary-dark: #0d3a6d;
+    --primary-light: #4a7bb8;
+    --secondary: #0065A1;
+    --success: #008859;
+    --warning: #FFE11B;
+    --danger: #D90E15;
+    --info: #79A7CF;
+    --dark: #003366;
+    --light: #f8f9fa;
+    --white: #ffffff;
+}
+
+/* Base styles for guest pages */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
