@@ -1,0 +1,12 @@
+import '../../public/assets/common/js/jquery-3.7.1.min.js';
+import '../../public/assets/common/js/modernizr.min.js';
+import '../../public/assets/common/js/bootstrap.bundle.min.js';
+import '../../public/assets/common/js/imagesloaded.pkgd.min.js';
+import '../../public/assets/common/js/jquery.magnific-popup.min.js';
+import '../../public/assets/common/js/isotope.pkgd.min.js';
+import '../../public/assets/common/js/jquery.appear.min.js';
+import '../../public/assets/common/js/jquery.easing.min.js';
+import '../../public/assets/common/js/owl.carousel.min.js';
+import '../../public/assets/common/js/counter-up.js';
+import '../../public/assets/common/js/wow.min.js';
+import '../../public/assets/guest/js/main.js';
