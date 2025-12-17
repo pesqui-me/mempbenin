@@ -79,4 +79,69 @@ Route::get('/suggestions', function () {
     return view('guest.suggestions');
 })->name('suggestions');
 
+// Routes Admin
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Dashboard
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    // Contenus
+    Route::prefix('contenus')->name('contenus.')->group(function () {
+        Route::get('/publications', function () {
+            return view('admin.contenus.publications');
+        })->name('publications');
+
+        Route::get('/textes', function () {
+            return view('admin.contenus.textes');
+        })->name('textes');
+
+        Route::get('/prestations', function () {
+            return view('admin.contenus.prestations');
+        })->name('prestations');
+
+        Route::get('/communiques', function () {
+            return view('admin.contenus.communiques');
+        })->name('communiques');
+
+        Route::get('/organigramme', function () {
+            return view('admin.contenus.organigramme');
+        })->name('organigramme');
+
+        Route::get('/medias', function () {
+            return view('admin.contenus.medias');
+        })->name('medias');
+
+        Route::get('/pages', function () {
+            return view('admin.contenus.pages');
+        })->name('pages');
+    });
+
+    // Gestion des usagers
+    Route::prefix('usagers')->name('usagers.')->group(function () {
+        Route::get('/audiences', function () {
+            return view('admin.usagers.audiences');
+        })->name('audiences');
+
+        Route::get('/suggestions', function () {
+            return view('admin.usagers.suggestions');
+        })->name('suggestions');
+
+        Route::get('/preoccupations', function () {
+            return view('admin.usagers.preoccupations');
+        })->name('preoccupations');
+    });
+
+    // Administration
+    Route::prefix('administration')->name('administration.')->group(function () {
+        Route::get('/utilisateurs', function () {
+            return view('admin.administration.utilisateurs');
+        })->name('utilisateurs');
+
+        Route::get('/parametres', function () {
+            return view('admin.administration.parametres');
+        })->name('parametres');
+    });
+});
+
 require __DIR__.'/auth.php';
