@@ -59,30 +59,30 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">PRESTATIONS</a>
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">PRESTATIONS</a>
 							<ul class="dropdown-menu fade-down">
-								<li><a class="dropdown-item" href="#">NOTRE CATALOGUE</a></li>
-								<li><a class="dropdown-item" href="#">NOS SERVICES EN LIGNE</a></li>
+								<li><a class="dropdown-item" href="{{ route('prestations.catalogue') }}">NOTRE CATALOGUE</a></li>
+								<li><a class="dropdown-item" href="{{ route('prestations.services') }}">NOS SERVICES EN LIGNE</a></li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">OPPORTUNITÉS</a>
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">OPPORTUNITÉS</a>
 							<ul class="dropdown-menu fade-down">
-								<li><a class="dropdown-item" href="#">APPELS D'OFFRE</a></li>
-								<li><a class="dropdown-item" href="#">RECRUTEMENTS</a></li>
+								<li><a class="dropdown-item" href="{{ route('opportunites.appels-offre') }}">APPELS D'OFFRE</a></li>
+								<li><a class="dropdown-item" href="{{ route('opportunites.recrutements') }}">RECRUTEMENTS</a></li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">DOCUMENTATIONS</a>
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">DOCUMENTATIONS</a>
 							<ul class="dropdown-menu fade-down">
-								<li><a class="dropdown-item" href="#">TEXTES LÉGISLATIVES ET RÈGLEMENTAIRES</a></li>
-								<li><a class="dropdown-item" href="#">PUBLICATIONS</a></li>
-								<li><a class="dropdown-item" href="#">MÉDIATHÈQUE</a></li>
-								<li><a class="dropdown-item" href="#">STATISTIQUES</a></li>
+								<li><a class="dropdown-item" href="{{ route('documentations.textes') }}">TEXTES LÉGISLATIVES ET RÈGLEMENTAIRES</a></li>
+								<li><a class="dropdown-item" href="{{ route('documentations.publications') }}">PUBLICATIONS</a></li>
+								<li><a class="dropdown-item" href="{{ route('documentations.mediatheque') }}">MÉDIATHÈQUE</a></li>
+								<li><a class="dropdown-item" href="{{ route('documentations.statistiques') }}">STATISTIQUES</a></li>
 							</ul>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="register.html">SUGGESTIONS</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">CONTACTS</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ route('suggestions') }}">SUGGESTIONS</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">CONTACTS</a></li>
 					</ul>
 					{{-- <div class="nav-right">
 						<div class="nav-right-btn mt-2">
