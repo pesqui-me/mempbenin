@@ -30,11 +30,11 @@
         <main class="main mt-3">
             <div class="container-fluid px-3">
                 <div class="row justify-content-center align-items-start gap-2">
-                    {{-- @include('layouts.guest.partials.latest-news') --}}
+                    @include('layouts.guest.sidebar-left')
                     <div class="col-md-7">
                         {{ $slot }}
                     </div>
-                    {{-- @include('layouts.guest.partials.asides') --}}
+                    @include('layouts.guest.sidebar-right')
                 </div>
             </div>
         </main>
