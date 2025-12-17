@@ -1,107 +1,162 @@
 <x-guest-layout>
     {{-- Breadcrumb --}}
-    <x-guest.breadcrumb :items="[
-        ['label' => 'Accueil', 'url' => route('home'), 'icon' => 'home'],
-        ['label' => 'Prestations', 'url' => '#'],
-        ['label' => 'Notre Catalogue', 'active' => true]
-    ]" />
+    <div class="breadcrumb-wrapper bg-light py-3 px-3 rounded mb-4">
+        <div class="breadcrumb-content">
+            <ul class="breadcrumb list-inline mb-0">
+                <li class="list-inline-item"><a href="{{ route('home') }}"><i class="far fa-home"></i> Accueil</a></li>
+                <li class="list-inline-item">/</li>
+                <li class="list-inline-item"><a href="#">Prestations</a></li>
+                <li class="list-inline-item">/</li>
+                <li class="list-inline-item active">Notre Catalogue</li>
+            </ul>
+        </div>
+    </div>
 
     {{-- Page Title --}}
-    <x-guest.page-title
-        title="Notre Catalogue de Prestations"
-        subtitle="Découvrez l'ensemble des services offerts par le Ministère"
-    />
+    <div class="page-title-area mb-4">
+        <h2 class="page-title">Notre Catalogue de Prestations</h2>
+        <div class="title-divider"></div>
+        <p class="text-muted mt-2">Découvrez l'ensemble des services offerts par le Ministère</p>
+    </div>
 
     {{-- Prestations Grid --}}
     <div class="prestations-section">
         <div class="row">
 
             {{-- Prestation 1 --}}
-            <div class="col-md-6 mb-5">
-                <x-guest.card.prestation
-                    title="Formation des instituteurs adjoints à titre payant"
-                    description="Programme de formation professionnelle pour les aspirants instituteurs adjoints. Formation complète avec certification officielle."
-                    icon="graduation-cap"
-                    icon-color="primary"
-                    link="#"
-                    :badges="[
-                        ['label' => 'Durée : 2 ans', 'variant' => 'info', 'icon' => 'clock'],
-                        ['label' => 'Places limitées', 'variant' => 'warning', 'icon' => 'users']
-                    ]"
-                />
+            <div class="col-md-6 mb-4">
+                <div class="prestation-card shadow-sm h-100">
+                    <div class="prestation-icon-wrapper">
+                        <div class="prestation-icon bg-primary text-white">
+                            <i class="far fa-chalkboard-teacher fa-3x"></i>
+                        </div>
+                    </div>
+                    <div class="prestation-card-body p-4">
+                        <h4 class="prestation-title mb-3">Formation des instituteurs adjoints à titre payant</h4>
+                        <p class="prestation-description text-muted mb-3">
+                            Programme de formation professionnelle pour les aspirants instituteurs adjoints.
+                            Formation complète avec certification officielle.
+                        </p>
+                        <div class="prestation-details mb-3">
+                            <span class="badge bg-info me-2"><i class="far fa-clock me-1"></i> Durée : 2 ans</span>
+                            <span class="badge bg-warning"><i class="far fa-users me-1"></i> Places limitées</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="far fa-file-alt me-2"></i>Voir les détails
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             {{-- Prestation 2 --}}
-            <div class="col-md-6 mb-5">
-                <x-guest.card.prestation
-                    title="Formation des instituteurs adjoints à titre boursier"
-                    description="Formation gratuite sur concours pour les meilleurs candidats. Bourse d'études complète avec engagement de service."
-                    icon="graduation-cap"
-                    icon-color="success"
-                    link="#"
-                    :badges="[
-                        ['label' => 'Gratuit', 'variant' => 'success'],
-                        ['label' => 'Sur concours', 'variant' => 'primary']
-                    ]"
-                />
+            <div class="col-md-6 mb-4">
+                <div class="prestation-card shadow-sm h-100">
+                    <div class="prestation-icon-wrapper">
+                        <div class="prestation-icon bg-success text-white">
+                            <i class="far fa-graduation-cap fa-3x"></i>
+                        </div>
+                    </div>
+                    <div class="prestation-card-body p-4">
+                        <h4 class="prestation-title mb-3">Formation des instituteurs adjoints à titre boursier</h4>
+                        <p class="prestation-description text-muted mb-3">
+                            Formation gratuite sur concours pour les meilleurs candidats.
+                            Bourse d'études complète avec engagement de service.
+                        </p>
+                        <div class="prestation-details mb-3">
+                            <span class="badge bg-success me-2"><i class="far fa-gift me-1"></i> Gratuit</span>
+                            <span class="badge bg-primary"><i class="far fa-trophy me-1"></i> Sur concours</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-success btn-sm">
+                            <i class="far fa-file-alt me-2"></i>Voir les détails
+                        </a>
+                    </div>
+                </div>
             </div>
 
             {{-- Prestation 3 --}}
-            <div class="col-md-6 mb-5">
-                <x-guest.card.prestation
-                    title="Rectification d'erreurs sur les attestations et diplômes"
-                    description="Service de correction des erreurs administratives sur les documents officiels délivrés par la direction des examens et concours."
-                    icon="file"
-                    icon-color="secondary"
-                    link="#"
-                    :badges="[
-                        ['label' => 'Délai : 15 jours', 'variant' => 'warning', 'icon' => 'clock'],
-                        ['label' => 'Documents requis', 'variant' => 'light']
-                    ]"
-                />
+            <div class="col-md-6 mb-4">
+                <div class="prestation-card shadow-sm h-100">
+                    <div class="prestation-icon-wrapper">
+                        <div class="prestation-icon bg-warning text-white">
+                            <i class="far fa-edit fa-3x"></i>
+                        </div>
+                    </div>
+                    <div class="prestation-card-body p-4">
+                        <h4 class="prestation-title mb-3">Rectification d'erreurs sur les attestations et diplômes</h4>
+                        <p class="prestation-description text-muted mb-3">
+                            Service de correction des erreurs administratives sur les documents officiels
+                            délivrés par la direction des examens et concours.
+                        </p>
+                        <div class="prestation-details mb-3">
+                            <span class="badge bg-warning me-2"><i class="far fa-hourglass-half me-1"></i> Délai : 15 jours</span>
+                            <span class="badge bg-secondary"><i class="far fa-file-invoice me-1"></i> Documents requis</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-warning btn-sm">
+                            <i class="far fa-file-alt me-2"></i>Voir les détails
+                        </a>
+                    </div>
+                </div>
             </div>
 
             {{-- Prestation 4 --}}
-            <div class="col-md-6 mb-5">
-                <x-guest.card.prestation
-                    title="Autorisation de diriger un établissement privé"
-                    description="Obtention de l'autorisation officielle pour l'ouverture et la direction d'un établissement d'enseignement privé."
-                    icon="briefcase"
-                    icon-color="danger"
-                    link="#"
-                    :badges="[
-                        ['label' => 'Dossier complet', 'variant' => 'danger'],
-                        ['label' => 'Délai : 1 mois', 'variant' => 'info', 'icon' => 'calendar']
-                    ]"
-                />
+            <div class="col-md-6 mb-4">
+                <div class="prestation-card shadow-sm h-100">
+                    <div class="prestation-icon-wrapper">
+                        <div class="prestation-icon bg-danger text-white">
+                            <i class="far fa-certificate fa-3x"></i>
+                        </div>
+                    </div>
+                    <div class="prestation-card-body p-4">
+                        <h4 class="prestation-title mb-3">Autorisation de diriger un établissement privé</h4>
+                        <p class="prestation-description text-muted mb-3">
+                            Obtention de l'autorisation officielle pour l'ouverture et la direction
+                            d'un établissement d'enseignement privé.
+                        </p>
+                        <div class="prestation-details mb-3">
+                            <span class="badge bg-danger me-2"><i class="far fa-clipboard-check me-1"></i> Dossier complet</span>
+                            <span class="badge bg-info"><i class="far fa-calendar me-1"></i> Délai : 1 mois</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-danger btn-sm">
+                            <i class="far fa-file-alt me-2"></i>Voir les détails
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
 
         {{-- Info Box --}}
-        <x-guest.alert variant="primary" icon="info" title="Comment bénéficier de nos prestations ?" class="mt-5">
-            <div class="row mt-3">
-                <div class="col-md-4 mb-3 text-center">
-                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 700;">
-                        1
+        <div class="prestations-info-box mt-4 p-4 bg-light rounded border-start border-primary border-5">
+            <h4 class="mb-3"><i class="far fa-info-circle text-primary me-2"></i>Comment bénéficier de nos prestations ?</h4>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="step-item text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-2" style="width: 50px; height: 50px; line-height: 50px;">
+                            <strong>1</strong>
+                        </div>
+                        <h6>Consultez les détails</h6>
+                        <p class="small text-muted mb-0">Informez-vous sur les conditions et documents requis</p>
                     </div>
-                    <h6 class="fw-bold">Consultez les détails</h6>
-                    <p class="small text-muted mb-0">Informez-vous sur les conditions et documents requis</p>
                 </div>
-                <div class="col-md-4 mb-3 text-center">
-                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 700;">
-                        2
+                <div class="col-md-4 mb-3">
+                    <div class="step-item text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-2" style="width: 50px; height: 50px; line-height: 50px;">
+                            <strong>2</strong>
+                        </div>
+                        <h6>Préparez votre dossier</h6>
+                        <p class="small text-muted mb-0">Rassemblez tous les documents nécessaires</p>
                     </div>
-                    <h6 class="fw-bold">Préparez votre dossier</h6>
-                    <p class="small text-muted mb-0">Rassemblez tous les documents nécessaires</p>
                 </div>
-                <div class="col-md-4 mb-3 text-center">
-                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 700;">
-                        3
+                <div class="col-md-4 mb-3">
+                    <div class="step-item text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-2" style="width: 50px; height: 50px; line-height: 50px;">
+                            <strong>3</strong>
+                        </div>
+                        <h6>Soumettez votre demande</h6>
+                        <p class="small text-muted mb-0">Déposez votre dossier ou faites une demande en ligne</p>
                     </div>
-                    <h6 class="fw-bold">Soumettez votre demande</h6>
-                    <p class="small text-muted mb-0">Déposez votre dossier ou faites une demande en ligne</p>
                 </div>
             </div>
-        </x-guest.alert>
+        </div>
     </div>
 </x-guest-layout>
