@@ -1,0 +1,254 @@
+/*=====================================================
+Ministère Pages Custom Styles
+=======================================================*/
+
+/* ===== Breadcrumb ===== */
+.breadcrumb-wrapper {
+    background: var(--theme-bg-light);
+    border-left: 4px solid var(--theme-color);
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
+.breadcrumb .list-inline-item a {
+    color: var(--body-text-color);
+    transition: var(--transition2);
+}
+
+.breadcrumb .list-inline-item a:hover {
+    color: var(--theme-color);
+}
+
+.breadcrumb .list-inline-item.active {
+    color: var(--theme-color);
+    font-weight: 500;
+}
+
+/* ===== Page Title ===== */
+.page-title-area {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    color: var(--color-dark);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.title-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--theme-color2);
+    margin-top: 10px;
+}
+
+/* ===== Member Cards ===== */
+.member-card {
+    background: var(--color-white);
+    border-radius: 10px;
+    transition: var(--transition2);
+    border: 1px solid var(--border-info-color);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow2);
+}
+
+.member-card-body {
+    padding: 25px;
+}
+
+.member-name {
+    color: var(--color-dark);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.member-position {
+    color: var(--theme-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ===== Minister Bio ===== */
+.minister-photo-wrapper img {
+    width: 100%;
+    border: 5px solid var(--theme-bg-light);
+}
+
+.minister-name-tag {
+    background: linear-gradient(135deg, var(--theme-color) 0%, #0d1f42 100%);
+}
+
+.minister-bio-content {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.section-title {
+    color: var(--color-dark);
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--theme-bg-light);
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-list li {
+    padding: 8px 0;
+    font-size: 16px;
+    color: var(--body-text-color);
+}
+
+.education-info {
+    border-left: 4px solid var(--theme-color);
+}
+
+/* ===== Audience CTA ===== */
+.audience-cta {
+    background: linear-gradient(135deg, var(--theme-color) 0%, #0d1f42 100%);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--theme-color) 0%, #0d1f42 100%);
+}
+
+/* ===== Info Boxes ===== */
+.cabinet-info-box,
+.secretariat-info-box,
+.inspection-info-box {
+    border-left: 5px solid var(--theme-color);
+}
+
+.role-list {
+    list-style: none;
+    padding: 0;
+}
+
+.role-list li {
+    padding: 5px 0;
+    color: var(--body-text-color);
+}
+
+/* ===== Mission Items ===== */
+.mission-item {
+    transition: var(--transition2);
+}
+
+.mission-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow2);
+}
+
+/* ===== Structure Cards ===== */
+.structure-category {
+    margin-bottom: 30px;
+}
+
+.category-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.structure-card {
+    border-radius: 10px;
+    border: 1px solid var(--border-info-color);
+    transition: var(--transition2);
+}
+
+.structure-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow2);
+}
+
+.structure-card-body {
+    padding: 20px;
+}
+
+.icon-circle {
+    background: var(--theme-color);
+    flex-shrink: 0;
+}
+
+.structure-leader strong {
+    color: var(--color-dark);
+}
+
+/* ===== Organigramme ===== */
+.organigramme-info-card {
+    border-left: 5px solid var(--theme-color);
+}
+
+.organigramme-download {
+    background: var(--theme-bg-light);
+    border-radius: 10px;
+}
+
+.download-icon .icon-wrapper {
+    box-shadow: var(--box-shadow2);
+}
+
+.organigramme-preview .preview-body {
+    border: 1px solid var(--border-info-color);
+}
+
+.organigramme-additional-info {
+    border-width: 2px !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 24px;
+    }
+
+    .minister-bio-content {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .member-card-body {
+        padding: 15px;
+    }
+
+    .structure-card-body {
+        padding: 15px;
+    }
+
+    .icon-circle {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .icon-circle i {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 20px;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+    .member-name {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+}

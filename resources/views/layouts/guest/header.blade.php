@@ -46,16 +46,16 @@
 				</div>
 				<div class="collapse navbar-collapse" id="main_nav">
 					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ route('home') }}">ACCUEIL</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">MINISTÈRE</a>
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">MINISTÈRE</a>
 							<ul class="dropdown-menu fade-down">
-								<li><a class="dropdown-item" href="#">BIBLIOGRAPHIE DU MINISTRE</a></li>
-								<li><a class="dropdown-item" href="#">CABINET DU MINISTRE</a></li>
-								<li><a class="dropdown-item" href="#">SÉCRÉTARIAT GÉNÉRAL DU MINISTÈRE</a></li>
-								<li><a class="dropdown-item" href="#">INSPECTION GÉNÉRALE DU MINISTÈRE</a></li>
-								<li><a class="dropdown-item" href="#">STRUCTURES DU MINISTÈRE</a></li>
-								<li><a class="dropdown-item" href="#">ORGANIGRAMME</a></li>
+								<li><a class="dropdown-item" href="{{ route('ministere.ministre') }}">BIOGRAPHIE DU MINISTRE</a></li>
+								<li><a class="dropdown-item" href="{{ route('ministere.cabinet') }}">CABINET DU MINISTRE</a></li>
+								<li><a class="dropdown-item" href="{{ route('ministere.secretariat') }}">SECRÉTARIAT GÉNÉRAL DU MINISTÈRE</a></li>
+								<li><a class="dropdown-item" href="{{ route('ministere.inspection') }}">INSPECTION GÉNÉRALE DU MINISTÈRE</a></li>
+								<li><a class="dropdown-item" href="{{ route('ministere.structures') }}">STRUCTURES DU MINISTÈRE</a></li>
+								<li><a class="dropdown-item" href="{{ route('ministere.organigramme') }}">ORGANIGRAMME</a></li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown">

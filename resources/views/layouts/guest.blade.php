@@ -20,6 +20,7 @@
         <link href="{{ asset('assets/common/css/owl.carousel.min.css') }}" rel="stylesheet">
 
         <link href="{{ asset('assets/guest/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/guest/css/ministere.css') }}" rel="stylesheet">
 
         <title>MEMP - Ministère des Enseignements Matermel & Primaire</title>
     </head>
