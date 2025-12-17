@@ -82,7 +82,7 @@
 							</ul>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="{{ route('suggestions') }}">SUGGESTIONS</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">CONTACTS</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">CONTACTS</a></li>
 					</ul>
 					{{-- <div class="nav-right">
 						<div class="nav-right-btn mt-2">
