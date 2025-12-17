@@ -32,15 +32,15 @@
             <div class="nav-section">
                 <div class="nav-section-title">Contenus</div>
                 <ul class="nav-menu">
-                    <li class="nav-item {{ request()->is('administration/publications*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/contenus/publications*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#publicationsMenu">
                             <i class="nav-icon fas fa-newspaper"></i>
                             <span class="nav-text">Publications</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="publicationsMenu">
-                            <li><a href="#">Toutes les publications</a></li>
-                            <li><a href="#">Nouvelle publication</a></li>
+                            <li><a href="{{ route('admin.contenus.publications.index') }}" class="{{ request()->routeIs('admin.contenus.publications.index') ? 'active' : '' }}">Toutes les publications</a></li>
+                            <li><a href="{{ route('admin.contenus.publications.create') }}" class="{{ request()->routeIs('admin.contenus.publications.create') ? 'active' : '' }}">Nouvelle publication</a></li>
                             <li><a href="#">Catégories</a></li>
                             <li><a href="#">Commentaires</a></li>
                         </ul>

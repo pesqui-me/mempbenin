@@ -88,9 +88,30 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Contenus
     Route::prefix('contenus')->name('contenus.')->group(function () {
-        Route::get('/publications', function () {
-            return view('admin.contenus.publications');
-        })->name('publications');
+        // Publications
+        Route::prefix('publications')->name('publications.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.publications.index');
+            })->name('index');
+            Route::get('/create', function () {
+                return view('admin.contenus.publications.create');
+            })->name('create');
+            Route::post('/', function () {
+                return redirect()->route('admin.contenus.publications.index');
+            })->name('store');
+            Route::get('/{id}', function ($id) {
+                return view('admin.contenus.publications.show', compact('id'));
+            })->name('show');
+            Route::get('/{id}/edit', function ($id) {
+                return view('admin.contenus.publications.edit', compact('id'));
+            })->name('edit');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.publications.show', $id);
+            })->name('update');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.publications.index');
+            })->name('destroy');
+        });
 
         Route::get('/textes', function () {
             return view('admin.contenus.textes');
