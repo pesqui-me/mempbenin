@@ -79,9 +79,4 @@ Route::get('/suggestions', function () {
     return view('guest.suggestions');
 })->name('suggestions');
 
-// contact
-Route::get('/contact', function () {
-    return view('guest.contact');
-})->name('contact');
-
 require __DIR__.'/auth.php';
