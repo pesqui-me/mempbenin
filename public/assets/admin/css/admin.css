@@ -157,27 +157,46 @@ body {
     text-decoration: none;
     transition: var(--transition);
     position: relative;
+    border-radius: 8px;
+    margin: 0 12px;
 }
 
 .nav-link:hover {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.1);
     color: #fff;
+    text-decoration: none;
+}
+
+.nav-link:visited {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
+
+.nav-link:focus {
+    outline: none;
+    text-decoration: none;
 }
 
 .nav-item.active > .nav-link {
-    background: rgba(255,255,255,0.1);
+    background: linear-gradient(90deg, rgba(255,190,0,0.15) 0%, rgba(255,190,0,0.05) 100%);
     color: var(--secondary-color);
     font-weight: 600;
+}
+
+.nav-item.active > .nav-link:hover {
+    background: linear-gradient(90deg, rgba(255,190,0,0.2) 0%, rgba(255,190,0,0.1) 100%);
 }
 
 .nav-item.active > .nav-link::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
     width: 4px;
     background: var(--secondary-color);
+    border-radius: 0 4px 4px 0;
 }
 
 .nav-icon {
@@ -201,20 +220,44 @@ body {
 
 .nav-submenu {
     list-style: none;
-    padding-left: 52px;
+    padding-left: 40px;
+    padding-right: 12px;
+}
+
+.nav-submenu li {
+    margin-bottom: 2px;
 }
 
 .nav-submenu li a {
     display: block;
-    padding: 8px 24px 8px 0;
+    padding: 8px 12px;
     color: rgba(255,255,255,0.7);
     text-decoration: none;
     font-size: 13px;
     transition: var(--transition);
+    border-radius: 6px;
 }
 
 .nav-submenu li a:hover {
     color: #fff;
+    background: rgba(255,255,255,0.08);
+    text-decoration: none;
+}
+
+.nav-submenu li a:visited {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+}
+
+.nav-submenu li a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.nav-submenu li a.active {
+    color: var(--secondary-color);
+    background: rgba(255,190,0,0.1);
+    font-weight: 500;
 }
 
 /* Sidebar Footer */

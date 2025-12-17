@@ -20,7 +20,7 @@
      */
     function initSidebar() {
         // Toggle sidebar collapse on desktop
-        $('.sidebar-toggle').on('click', function(e) {
+        $('#sidebarToggle').on('click', function(e) {
             e.preventDefault();
             $('.wrapper').toggleClass('sidebar-collapsed');
 
@@ -35,24 +35,24 @@
             $('.wrapper').addClass('sidebar-collapsed');
         }
 
-        // Handle submenu collapse
-        $('.sidebar-submenu-toggle').on('click', function(e) {
-            e.preventDefault();
-            const $menuItem = $(this).closest('.sidebar-menu-item');
-            const $submenu = $menuItem.find('.sidebar-submenu');
+        // Handle submenu collapse - close other menus when opening one
+        $('.nav-link[data-bs-toggle="collapse"]').on('click', function(e) {
+            const targetMenu = $(this).attr('data-bs-target');
 
-            // Close other submenus
-            $('.sidebar-menu-item').not($menuItem).removeClass('open');
-            $('.sidebar-submenu').not($submenu).slideUp(300);
-
-            // Toggle current submenu
-            $menuItem.toggleClass('open');
-            $submenu.slideToggle(300);
+            // Close all other collapse menus except the one being clicked
+            $('.nav-submenu.collapse').not(targetMenu).each(function() {
+                if ($(this).hasClass('show')) {
+                    // Use Bootstrap's collapse hide method
+                    const bsCollapse = new bootstrap.Collapse(this, {
+                        toggle: false
+                    });
+                    bsCollapse.hide();
+                }
+            });
         });
 
         // Keep parent menu open if child is active
-        $('.sidebar-submenu-item.active').closest('.sidebar-menu-item').addClass('open');
-        $('.sidebar-submenu-item.active').closest('.sidebar-submenu').show();
+        $('.nav-item.active .nav-submenu').addClass('show');
     }
 
     /**
