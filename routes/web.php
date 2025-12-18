@@ -113,25 +113,115 @@ Route::prefix('admin')->name('admin.')->group(function () {
             })->name('destroy');
         });
 
-        Route::get('/textes', function () {
-            return view('admin.contenus.textes');
-        })->name('textes');
+        // Textes & Législations
+        Route::prefix('textes')->name('textes.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.textes.index');
+            })->name('index');
+            Route::get('/create', function () {
+                return view('admin.contenus.textes.create');
+            })->name('create');
+            Route::post('/', function () {
+                return redirect()->route('admin.contenus.textes.index');
+            })->name('store');
+            Route::get('/{id}', function ($id) {
+                return view('admin.contenus.textes.show', compact('id'));
+            })->name('show');
+            Route::get('/{id}/edit', function ($id) {
+                return view('admin.contenus.textes.edit', compact('id'));
+            })->name('edit');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.textes.show', $id);
+            })->name('update');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.textes.index');
+            })->name('destroy');
+        });
 
-        Route::get('/prestations', function () {
-            return view('admin.contenus.prestations');
-        })->name('prestations');
+        // Prestations
+        Route::prefix('prestations')->name('prestations.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.prestations.index');
+            })->name('index');
+            Route::get('/create', function () {
+                return view('admin.contenus.prestations.create');
+            })->name('create');
+            Route::post('/', function () {
+                return redirect()->route('admin.contenus.prestations.index');
+            })->name('store');
+            Route::get('/{id}', function ($id) {
+                return view('admin.contenus.prestations.show', compact('id'));
+            })->name('show');
+            Route::get('/{id}/edit', function ($id) {
+                return view('admin.contenus.prestations.edit', compact('id'));
+            })->name('edit');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.prestations.show', $id);
+            })->name('update');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.prestations.index');
+            })->name('destroy');
+        });
 
-        Route::get('/communiques', function () {
-            return view('admin.contenus.communiques');
-        })->name('communiques');
+        // Communiqués
+        Route::prefix('communiques')->name('communiques.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.communiques.index');
+            })->name('index');
+            Route::get('/create', function () {
+                return view('admin.contenus.communiques.create');
+            })->name('create');
+            Route::post('/', function () {
+                return redirect()->route('admin.contenus.communiques.index');
+            })->name('store');
+            Route::get('/{id}', function ($id) {
+                return view('admin.contenus.communiques.show', compact('id'));
+            })->name('show');
+            Route::get('/{id}/edit', function ($id) {
+                return view('admin.contenus.communiques.edit', compact('id'));
+            })->name('edit');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.communiques.show', $id);
+            })->name('update');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.communiques.index');
+            })->name('destroy');
+        });
 
-        Route::get('/organigramme', function () {
-            return view('admin.contenus.organigramme');
-        })->name('organigramme');
+        // Organigramme
+        Route::prefix('organigramme')->name('organigramme.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.organigramme.index');
+            })->name('index');
+            Route::get('/create', function () {
+                return view('admin.contenus.organigramme.create');
+            })->name('create');
+            Route::post('/', function () {
+                return redirect()->route('admin.contenus.organigramme.index');
+            })->name('store');
+            Route::get('/{id}/edit', function ($id) {
+                return view('admin.contenus.organigramme.edit', compact('id'));
+            })->name('edit');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.organigramme.index');
+            })->name('update');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.organigramme.index');
+            })->name('destroy');
+        });
 
-        Route::get('/medias', function () {
-            return view('admin.contenus.medias');
-        })->name('medias');
+        // Médias
+        Route::prefix('medias')->name('medias.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.medias.index');
+            })->name('index');
+            Route::post('/upload', function () {
+                return redirect()->route('admin.contenus.medias.index');
+            })->name('upload');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.contenus.medias.index');
+            })->name('destroy');
+        });
 
         Route::get('/pages', function () {
             return view('admin.contenus.pages');

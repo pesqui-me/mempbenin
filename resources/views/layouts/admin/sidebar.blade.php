@@ -46,64 +46,59 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/textes*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/contenus/textes*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#textesMenu">
                             <i class="nav-icon fas fa-gavel"></i>
                             <span class="nav-text">Textes & Législations</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="textesMenu">
-                            <li><a href="#">Tous les textes</a></li>
-                            <li><a href="#">Nouveau texte</a></li>
+                            <li><a href="{{ route('admin.contenus.textes.index') }}" class="{{ request()->routeIs('admin.contenus.textes.index') ? 'active' : '' }}">Tous les textes</a></li>
+                            <li><a href="{{ route('admin.contenus.textes.create') }}" class="{{ request()->routeIs('admin.contenus.textes.create') ? 'active' : '' }}">Nouveau texte</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/prestations*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/contenus/prestations*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#prestationsMenu">
                             <i class="nav-icon fas fa-tasks"></i>
                             <span class="nav-text">Prestations</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="prestationsMenu">
-                            <li><a href="#">Toutes les prestations</a></li>
-                            <li><a href="#">Nouvelle prestation</a></li>
+                            <li><a href="{{ route('admin.contenus.prestations.index') }}" class="{{ request()->routeIs('admin.contenus.prestations.index') ? 'active' : '' }}">Toutes les prestations</a></li>
+                            <li><a href="{{ route('admin.contenus.prestations.create') }}" class="{{ request()->routeIs('admin.contenus.prestations.create') ? 'active' : '' }}">Nouvelle prestation</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/communiques*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/contenus/communiques*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#communiquesMenu">
                             <i class="nav-icon fas fa-bullhorn"></i>
                             <span class="nav-text">Communiqués</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="communiquesMenu">
-                            <li><a href="#">Tous les communiqués</a></li>
-                            <li><a href="#">Nouveau communiqué</a></li>
+                            <li><a href="{{ route('admin.contenus.communiques.index') }}" class="{{ request()->routeIs('admin.contenus.communiques.index') ? 'active' : '' }}">Tous les communiqués</a></li>
+                            <li><a href="{{ route('admin.contenus.communiques.create') }}" class="{{ request()->routeIs('admin.contenus.communiques.create') ? 'active' : '' }}">Nouveau communiqué</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/organigramme*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/contenus/organigramme*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#organigrammeMenu">
                             <i class="nav-icon fas fa-sitemap"></i>
                             <span class="nav-text">Organigramme</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="organigrammeMenu">
-                            <li><a href="#">Structures</a></li>
-                            <li><a href="#">Agents</a></li>
+                            <li><a href="{{ route('admin.contenus.organigramme.index') }}" class="{{ request()->routeIs('admin.contenus.organigramme.index') ? 'active' : '' }}">Voir l'organigramme</a></li>
+                            <li><a href="{{ route('admin.contenus.organigramme.create') }}" class="{{ request()->routeIs('admin.contenus.organigramme.create') ? 'active' : '' }}">Nouveau poste</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/medias*') ? 'active' : '' }}">
-                        <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#mediasMenu">
+                    <li class="nav-item {{ request()->is('admin/contenus/medias*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.contenus.medias.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-images"></i>
-                            <span class="nav-text">Médias</span>
-                            <i class="nav-arrow fas fa-chevron-down"></i>
+                            <span class="nav-text">Médiathèque</span>
                         </a>
-                        <ul class="nav-submenu collapse" id="mediasMenu">
-                            <li><a href="#">Médiathèque</a></li>
-                            <li><a href="#">Nouveau fichier</a></li>
-                        </ul>
                     </li>
 
                     <li class="nav-item {{ request()->is('administration/pages*') ? 'active' : '' }}">
