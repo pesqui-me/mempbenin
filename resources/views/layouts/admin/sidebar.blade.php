@@ -101,21 +101,11 @@
                         </a>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/pages*') ? 'active' : '' }}">
-                        <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#pagesMenu">
+                    <li class="nav-item {{ request()->is('admin/contenus/pages*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.contenus.pages.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <span class="nav-text">Pages</span>
-                            <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
-                        <ul class="nav-submenu collapse" id="pagesMenu">
-                            <li><a href="#">Ministère</a></li>
-                            <li><a href="#">Partenaires</a></li>
-                            <li><a href="#">Contacts</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Réseaux sociaux</a></li>
-                            <li><a href="#">Liens utiles</a></li>
-                            <li><a href="#">Copyright</a></li>
-                        </ul>
                     </li>
                 </ul>
             </div>
@@ -124,20 +114,20 @@
             <div class="nav-section">
                 <div class="nav-section-title">Gestion des usagers</div>
                 <ul class="nav-menu">
-                    <li class="nav-item {{ request()->is('administration/audiences*') ? 'active' : '' }}">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item {{ request()->is('admin/usagers/audiences*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.usagers.audiences.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-calendar-alt"></i>
                             <span class="nav-text">Audiences</span>
                         </a>
                     </li>
-                    <li class="nav-item {{ request()->is('administration/suggestions*') ? 'active' : '' }}">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item {{ request()->is('admin/usagers/suggestions*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.usagers.suggestions.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-lightbulb"></i>
                             <span class="nav-text">Suggestions</span>
                         </a>
                     </li>
-                    <li class="nav-item {{ request()->is('administration/preoccupations*') ? 'active' : '' }}">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item {{ request()->is('admin/usagers/preoccupations*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.usagers.preoccupations.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-exclamation-triangle"></i>
                             <span class="nav-text">Préoccupations</span>
                         </a>
@@ -149,29 +139,29 @@
             <div class="nav-section">
                 <div class="nav-section-title">Administration</div>
                 <ul class="nav-menu">
-                    <li class="nav-item {{ request()->is('administration/utilisateurs*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/administration/utilisateurs*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#utilisateursMenu">
                             <i class="nav-icon fas fa-users"></i>
                             <span class="nav-text">Utilisateurs</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="utilisateursMenu">
-                            <li><a href="#">Tous les utilisateurs</a></li>
-                            <li><a href="#">Nouvel utilisateur</a></li>
+                            <li><a href="{{ route('admin.administration.utilisateurs.index') }}" class="{{ request()->routeIs('admin.administration.utilisateurs.index') ? 'active' : '' }}">Tous les utilisateurs</a></li>
+                            <li><a href="{{ route('admin.administration.utilisateurs.create') }}" class="{{ request()->routeIs('admin.administration.utilisateurs.create') ? 'active' : '' }}">Nouvel utilisateur</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ request()->is('administration/parametres*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/administration/parametres*') ? 'active' : '' }}">
                         <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#parametresMenu">
                             <i class="nav-icon fas fa-cog"></i>
                             <span class="nav-text">Paramètres</span>
                             <i class="nav-arrow fas fa-chevron-down"></i>
                         </a>
                         <ul class="nav-submenu collapse" id="parametresMenu">
-                            <li><a href="#">Mon compte</a></li>
-                            <li><a href="#">Rôles & Permissions</a></li>
-                            <li><a href="#">Configurations</a></li>
-                            <li><a href="#">Mode Maintenance</a></li>
+                            <li><a href="{{ route('admin.administration.parametres.compte') }}" class="{{ request()->routeIs('admin.administration.parametres.compte') ? 'active' : '' }}">Mon compte</a></li>
+                            <li><a href="{{ route('admin.administration.parametres.roles') }}" class="{{ request()->routeIs('admin.administration.parametres.roles') ? 'active' : '' }}">Rôles & Permissions</a></li>
+                            <li><a href="{{ route('admin.administration.parametres.configurations') }}" class="{{ request()->routeIs('admin.administration.parametres.configurations') ? 'active' : '' }}">Configurations</a></li>
+                            <li><a href="{{ route('admin.administration.parametres.maintenance') }}" class="{{ request()->routeIs('admin.administration.parametres.maintenance') ? 'active' : '' }}">Mode Maintenance</a></li>
                         </ul>
                     </li>
                 </ul>

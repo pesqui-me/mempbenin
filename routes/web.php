@@ -223,35 +223,113 @@ Route::prefix('admin')->name('admin.')->group(function () {
             })->name('destroy');
         });
 
-        Route::get('/pages', function () {
-            return view('admin.contenus.pages');
-        })->name('pages');
+        // Pages statiques
+        Route::prefix('pages')->name('pages.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.contenus.pages.index');
+            })->name('index');
+            Route::get('/{slug}/edit', function ($slug) {
+                return view('admin.contenus.pages.edit', compact('slug'));
+            })->name('edit');
+            Route::put('/{slug}', function ($slug) {
+                return redirect()->route('admin.contenus.pages.index');
+            })->name('update');
+        });
     });
 
     // Gestion des usagers
     Route::prefix('usagers')->name('usagers.')->group(function () {
-        Route::get('/audiences', function () {
-            return view('admin.usagers.audiences');
-        })->name('audiences');
+        // Audiences
+        Route::prefix('audiences')->name('audiences.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.usagers.audiences.index');
+            })->name('index');
+            Route::get('/{id}', function ($id) {
+                return view('admin.usagers.audiences.show', compact('id'));
+            })->name('show');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.usagers.audiences.index');
+            })->name('update');
+        });
 
-        Route::get('/suggestions', function () {
-            return view('admin.usagers.suggestions');
-        })->name('suggestions');
+        // Suggestions
+        Route::prefix('suggestions')->name('suggestions.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.usagers.suggestions.index');
+            })->name('index');
+            Route::get('/{id}', function ($id) {
+                return view('admin.usagers.suggestions.show', compact('id'));
+            })->name('show');
+            Route::post('/{id}/reply', function ($id) {
+                return redirect()->route('admin.usagers.suggestions.show', $id);
+            })->name('reply');
+        });
 
-        Route::get('/preoccupations', function () {
-            return view('admin.usagers.preoccupations');
-        })->name('preoccupations');
+        // Préoccupations
+        Route::prefix('preoccupations')->name('preoccupations.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.usagers.preoccupations.index');
+            })->name('index');
+            Route::get('/{id}', function ($id) {
+                return view('admin.usagers.preoccupations.show', compact('id'));
+            })->name('show');
+            Route::put('/{id}/resolve', function ($id) {
+                return redirect()->route('admin.usagers.preoccupations.show', $id);
+            })->name('resolve');
+        });
     });
 
     // Administration
     Route::prefix('administration')->name('administration.')->group(function () {
-        Route::get('/utilisateurs', function () {
-            return view('admin.administration.utilisateurs');
-        })->name('utilisateurs');
+        // Utilisateurs
+        Route::prefix('utilisateurs')->name('utilisateurs.')->group(function () {
+            Route::get('/', function () {
+                return view('admin.administration.utilisateurs.index');
+            })->name('index');
+            Route::get('/create', function () {
+                return view('admin.administration.utilisateurs.create');
+            })->name('create');
+            Route::post('/', function () {
+                return redirect()->route('admin.administration.utilisateurs.index');
+            })->name('store');
+            Route::get('/{id}', function ($id) {
+                return view('admin.administration.utilisateurs.show', compact('id'));
+            })->name('show');
+            Route::get('/{id}/edit', function ($id) {
+                return view('admin.administration.utilisateurs.edit', compact('id'));
+            })->name('edit');
+            Route::put('/{id}', function ($id) {
+                return redirect()->route('admin.administration.utilisateurs.show', $id);
+            })->name('update');
+            Route::delete('/{id}', function ($id) {
+                return redirect()->route('admin.administration.utilisateurs.index');
+            })->name('destroy');
+        });
 
-        Route::get('/parametres', function () {
-            return view('admin.administration.parametres');
-        })->name('parametres');
+        // Paramètres
+        Route::prefix('parametres')->name('parametres.')->group(function () {
+            Route::get('/compte', function () {
+                return view('admin.administration.parametres.compte');
+            })->name('compte');
+            Route::put('/compte', function () {
+                return redirect()->route('admin.administration.parametres.compte');
+            })->name('compte.update');
+            Route::get('/roles', function () {
+                return view('admin.administration.parametres.roles');
+            })->name('roles');
+            Route::get('/configurations', function () {
+                return view('admin.administration.parametres.configurations');
+            })->name('configurations');
+            Route::put('/configurations', function () {
+                return redirect()->route('admin.administration.parametres.configurations');
+            })->name('configurations.update');
+            Route::get('/maintenance', function () {
+                return view('admin.administration.parametres.maintenance');
+            })->name('maintenance');
+            Route::put('/maintenance', function () {
+                return redirect()->route('admin.administration.parametres.maintenance');
+            })->name('maintenance.update');
+        });
     });
 });
 
